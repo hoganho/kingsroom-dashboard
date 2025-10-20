@@ -2,7 +2,7 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-import * as APITypes from "../src/API";
+import * as APITypes from "../API";
 type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryInput: InputType;
   __generatedQueryOutput: OutputType;
@@ -409,10 +409,19 @@ export const getGame = /* GraphQL */ `query GetGame($id: ID!) {
     status
     gameDateTime
     venueId
+    sourceUrl
     seriesName
     isAdHoc
     tournamentStructureId
     cashStructureId
+    registrationStatus
+    gameVariant
+    prizepool
+    totalEntries
+    totalRebuys
+    totalAddons
+    totalDuration
+    gameTags
     venue {
       id
       name
@@ -434,6 +443,8 @@ export const getGame = /* GraphQL */ `query GetGame($id: ID!) {
       buyIn
       rake
       startingStack
+      hasGuarantee
+      guaranteeAmount
       createdAt
       updatedAt
       _version
@@ -483,10 +494,19 @@ export const listGames = /* GraphQL */ `query ListGames(
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version
@@ -519,10 +539,19 @@ export const syncGames = /* GraphQL */ `query SyncGames(
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version
@@ -544,6 +573,8 @@ export const getTournamentStructure = /* GraphQL */ `query GetTournamentStructur
     buyIn
     rake
     startingStack
+    hasGuarantee
+    guaranteeAmount
     levels {
       nextToken
       startedAt
@@ -583,6 +614,8 @@ export const listTournamentStructures = /* GraphQL */ `query ListTournamentStruc
       buyIn
       rake
       startingStack
+      hasGuarantee
+      guaranteeAmount
       createdAt
       updatedAt
       _version
@@ -618,6 +651,8 @@ export const syncTournamentStructures = /* GraphQL */ `query SyncTournamentStruc
       buyIn
       rake
       startingStack
+      hasGuarantee
+      guaranteeAmount
       createdAt
       updatedAt
       _version
@@ -1261,10 +1296,19 @@ export const getPlayerResult = /* GraphQL */ `query GetPlayerResult($id: ID!) {
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version
@@ -2284,10 +2328,19 @@ export const gamesByVenueIdAndGameDateTime = /* GraphQL */ `query GamesByVenueId
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version
@@ -2303,6 +2356,56 @@ export const gamesByVenueIdAndGameDateTime = /* GraphQL */ `query GamesByVenueId
 ` as GeneratedQuery<
   APITypes.GamesByVenueIdAndGameDateTimeQueryVariables,
   APITypes.GamesByVenueIdAndGameDateTimeQuery
+>;
+export const gameBySourceUrl = /* GraphQL */ `query GameBySourceUrl(
+  $sourceUrl: AWSURL!
+  $sortDirection: ModelSortDirection
+  $filter: ModelGameFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  gameBySourceUrl(
+    sourceUrl: $sourceUrl
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      name
+      type
+      status
+      gameDateTime
+      venueId
+      sourceUrl
+      seriesName
+      isAdHoc
+      tournamentStructureId
+      cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+    nextToken
+    startedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GameBySourceUrlQueryVariables,
+  APITypes.GameBySourceUrlQuery
 >;
 export const gamesByTournamentStructureId = /* GraphQL */ `query GamesByTournamentStructureId(
   $tournamentStructureId: ID!
@@ -2325,10 +2428,19 @@ export const gamesByTournamentStructureId = /* GraphQL */ `query GamesByTourname
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version
@@ -2366,10 +2478,19 @@ export const gamesByCashStructureId = /* GraphQL */ `query GamesByCashStructureI
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version

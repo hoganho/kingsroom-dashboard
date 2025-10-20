@@ -31,7 +31,8 @@ const GameStatus = {
   "SCHEDULED": "SCHEDULED",
   "LIVE": "LIVE",
   "COMPLETED": "COMPLETED",
-  "CANCELLED": "CANCELLED"
+  "CANCELLED": "CANCELLED",
+  "FINISHED": "FINISHED"
 };
 
 const TournamentType = {

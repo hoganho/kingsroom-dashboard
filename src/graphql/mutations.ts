@@ -2,20 +2,122 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-import * as APITypes from "../src/API";
+import * as APITypes from "../API";
 type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationInput: InputType;
   __generatedMutationOutput: OutputType;
 };
 
-export const scrapeTournament = /* GraphQL */ `mutation ScrapeTournament($url: String!, $venueId: ID!) {
-  scrapeTournament(url: $url, venueId: $venueId) {
+export const fetchTournamentData = /* GraphQL */ `mutation FetchTournamentData($url: AWSURL!) {
+  fetchTournamentData(url: $url) {
+    name
+    gameDateTime
+    status
+    registrationStatus
+    gameVariant
+    prizepool
+    totalEntries
+    totalRebuys
+    totalAddons
+    totalDuration
+    gameTags
+    buyIn
+    startingStack
+    hasGuarantee
+    guaranteeAmount
+    levels {
+      levelNumber
+      durationMinutes
+      smallBlind
+      bigBlind
+      ante
+      __typename
+    }
+    results {
+      rank
+      name
+      winnings
+      __typename
+    }
+    rawHtml
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.FetchTournamentDataMutationVariables,
+  APITypes.FetchTournamentDataMutation
+>;
+export const saveTournamentData = /* GraphQL */ `mutation SaveTournamentData($input: SaveTournamentInput!) {
+  saveTournamentData(input: $input) {
     id
-    syncedAt
-    method
+    name
+    type
+    status
+    gameDateTime
+    venueId
     sourceUrl
-    title
-    content
+    seriesName
+    isAdHoc
+    tournamentStructureId
+    cashStructureId
+    registrationStatus
+    gameVariant
+    prizepool
+    totalEntries
+    totalRebuys
+    totalAddons
+    totalDuration
+    gameTags
+    venue {
+      id
+      name
+      address
+      city
+      country
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      venueDetailsId
+      __typename
+    }
+    tournamentStructure {
+      id
+      name
+      type
+      buyIn
+      rake
+      startingStack
+      hasGuarantee
+      guaranteeAmount
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+    cashStructure {
+      id
+      name
+      smallBlind
+      bigBlind
+      minBuyIn
+      maxBuyIn
+      rakeStructureId
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+    playerResults {
+      nextToken
+      startedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -25,8 +127,8 @@ export const scrapeTournament = /* GraphQL */ `mutation ScrapeTournament($url: S
   }
 }
 ` as GeneratedMutation<
-  APITypes.ScrapeTournamentMutationVariables,
-  APITypes.ScrapeTournamentMutation
+  APITypes.SaveTournamentDataMutationVariables,
+  APITypes.SaveTournamentDataMutation
 >;
 export const createDataSync = /* GraphQL */ `mutation CreateDataSync(
   $input: CreateDataSyncInput!
@@ -486,10 +588,19 @@ export const createGame = /* GraphQL */ `mutation CreateGame(
     status
     gameDateTime
     venueId
+    sourceUrl
     seriesName
     isAdHoc
     tournamentStructureId
     cashStructureId
+    registrationStatus
+    gameVariant
+    prizepool
+    totalEntries
+    totalRebuys
+    totalAddons
+    totalDuration
+    gameTags
     venue {
       id
       name
@@ -511,6 +622,8 @@ export const createGame = /* GraphQL */ `mutation CreateGame(
       buyIn
       rake
       startingStack
+      hasGuarantee
+      guaranteeAmount
       createdAt
       updatedAt
       _version
@@ -561,10 +674,19 @@ export const updateGame = /* GraphQL */ `mutation UpdateGame(
     status
     gameDateTime
     venueId
+    sourceUrl
     seriesName
     isAdHoc
     tournamentStructureId
     cashStructureId
+    registrationStatus
+    gameVariant
+    prizepool
+    totalEntries
+    totalRebuys
+    totalAddons
+    totalDuration
+    gameTags
     venue {
       id
       name
@@ -586,6 +708,8 @@ export const updateGame = /* GraphQL */ `mutation UpdateGame(
       buyIn
       rake
       startingStack
+      hasGuarantee
+      guaranteeAmount
       createdAt
       updatedAt
       _version
@@ -636,10 +760,19 @@ export const deleteGame = /* GraphQL */ `mutation DeleteGame(
     status
     gameDateTime
     venueId
+    sourceUrl
     seriesName
     isAdHoc
     tournamentStructureId
     cashStructureId
+    registrationStatus
+    gameVariant
+    prizepool
+    totalEntries
+    totalRebuys
+    totalAddons
+    totalDuration
+    gameTags
     venue {
       id
       name
@@ -661,6 +794,8 @@ export const deleteGame = /* GraphQL */ `mutation DeleteGame(
       buyIn
       rake
       startingStack
+      hasGuarantee
+      guaranteeAmount
       createdAt
       updatedAt
       _version
@@ -711,6 +846,8 @@ export const createTournamentStructure = /* GraphQL */ `mutation CreateTournamen
     buyIn
     rake
     startingStack
+    hasGuarantee
+    guaranteeAmount
     levels {
       nextToken
       startedAt
@@ -744,6 +881,8 @@ export const updateTournamentStructure = /* GraphQL */ `mutation UpdateTournamen
     buyIn
     rake
     startingStack
+    hasGuarantee
+    guaranteeAmount
     levels {
       nextToken
       startedAt
@@ -777,6 +916,8 @@ export const deleteTournamentStructure = /* GraphQL */ `mutation DeleteTournamen
     buyIn
     rake
     startingStack
+    hasGuarantee
+    guaranteeAmount
     levels {
       nextToken
       startedAt
@@ -1504,10 +1645,19 @@ export const createPlayerResult = /* GraphQL */ `mutation CreatePlayerResult(
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version
@@ -1545,10 +1695,19 @@ export const updatePlayerResult = /* GraphQL */ `mutation UpdatePlayerResult(
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version
@@ -1586,10 +1745,19 @@ export const deletePlayerResult = /* GraphQL */ `mutation DeletePlayerResult(
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version

@@ -2,7 +2,7 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-import * as APITypes from "../src/API";
+import * as APITypes from "../API";
 type GeneratedSubscription<InputType, OutputType> = string & {
   __generatedSubscriptionInput: InputType;
   __generatedSubscriptionOutput: OutputType;
@@ -433,10 +433,19 @@ export const onCreateGame = /* GraphQL */ `subscription OnCreateGame($filter: Mo
     status
     gameDateTime
     venueId
+    sourceUrl
     seriesName
     isAdHoc
     tournamentStructureId
     cashStructureId
+    registrationStatus
+    gameVariant
+    prizepool
+    totalEntries
+    totalRebuys
+    totalAddons
+    totalDuration
+    gameTags
     venue {
       id
       name
@@ -458,6 +467,8 @@ export const onCreateGame = /* GraphQL */ `subscription OnCreateGame($filter: Mo
       buyIn
       rake
       startingStack
+      hasGuarantee
+      guaranteeAmount
       createdAt
       updatedAt
       _version
@@ -505,10 +516,19 @@ export const onUpdateGame = /* GraphQL */ `subscription OnUpdateGame($filter: Mo
     status
     gameDateTime
     venueId
+    sourceUrl
     seriesName
     isAdHoc
     tournamentStructureId
     cashStructureId
+    registrationStatus
+    gameVariant
+    prizepool
+    totalEntries
+    totalRebuys
+    totalAddons
+    totalDuration
+    gameTags
     venue {
       id
       name
@@ -530,6 +550,8 @@ export const onUpdateGame = /* GraphQL */ `subscription OnUpdateGame($filter: Mo
       buyIn
       rake
       startingStack
+      hasGuarantee
+      guaranteeAmount
       createdAt
       updatedAt
       _version
@@ -577,10 +599,19 @@ export const onDeleteGame = /* GraphQL */ `subscription OnDeleteGame($filter: Mo
     status
     gameDateTime
     venueId
+    sourceUrl
     seriesName
     isAdHoc
     tournamentStructureId
     cashStructureId
+    registrationStatus
+    gameVariant
+    prizepool
+    totalEntries
+    totalRebuys
+    totalAddons
+    totalDuration
+    gameTags
     venue {
       id
       name
@@ -602,6 +633,8 @@ export const onDeleteGame = /* GraphQL */ `subscription OnDeleteGame($filter: Mo
       buyIn
       rake
       startingStack
+      hasGuarantee
+      guaranteeAmount
       createdAt
       updatedAt
       _version
@@ -651,6 +684,8 @@ export const onCreateTournamentStructure = /* GraphQL */ `subscription OnCreateT
     buyIn
     rake
     startingStack
+    hasGuarantee
+    guaranteeAmount
     levels {
       nextToken
       startedAt
@@ -683,6 +718,8 @@ export const onUpdateTournamentStructure = /* GraphQL */ `subscription OnUpdateT
     buyIn
     rake
     startingStack
+    hasGuarantee
+    guaranteeAmount
     levels {
       nextToken
       startedAt
@@ -715,6 +752,8 @@ export const onDeleteTournamentStructure = /* GraphQL */ `subscription OnDeleteT
     buyIn
     rake
     startingStack
+    hasGuarantee
+    guaranteeAmount
     levels {
       nextToken
       startedAt
@@ -1417,10 +1456,19 @@ export const onCreatePlayerResult = /* GraphQL */ `subscription OnCreatePlayerRe
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version
@@ -1457,10 +1505,19 @@ export const onUpdatePlayerResult = /* GraphQL */ `subscription OnUpdatePlayerRe
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version
@@ -1497,10 +1554,19 @@ export const onDeletePlayerResult = /* GraphQL */ `subscription OnDeletePlayerRe
       status
       gameDateTime
       venueId
+      sourceUrl
       seriesName
       isAdHoc
       tournamentStructureId
       cashStructureId
+      registrationStatus
+      gameVariant
+      prizepool
+      totalEntries
+      totalRebuys
+      totalAddons
+      totalDuration
+      gameTags
       createdAt
       updatedAt
       _version

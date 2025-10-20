@@ -31,7 +31,8 @@ export enum GameStatus {
   SCHEDULED = "SCHEDULED",
   LIVE = "LIVE",
   COMPLETED = "COMPLETED",
-  CANCELLED = "CANCELLED"
+  CANCELLED = "CANCELLED",
+  FINISHED = "FINISHED"
 }
 
 export enum TournamentType {
@@ -268,6 +269,14 @@ type EagerGame = {
   readonly isAdHoc?: boolean | null;
   readonly tournamentStructureId?: string | null;
   readonly cashStructureId?: string | null;
+  readonly registrationStatus?: string | null;
+  readonly gameVariant?: string | null;
+  readonly prizepool?: number | null;
+  readonly totalEntries?: number | null;
+  readonly totalRebuys?: number | null;
+  readonly totalAddons?: number | null;
+  readonly totalDuration?: string | null;
+  readonly gameTags?: (string | null)[] | null;
   readonly venue?: Venue | null;
   readonly tournamentStructure?: TournamentStructure | null;
   readonly cashStructure?: CashStructure | null;
@@ -291,6 +300,14 @@ type LazyGame = {
   readonly isAdHoc?: boolean | null;
   readonly tournamentStructureId?: string | null;
   readonly cashStructureId?: string | null;
+  readonly registrationStatus?: string | null;
+  readonly gameVariant?: string | null;
+  readonly prizepool?: number | null;
+  readonly totalEntries?: number | null;
+  readonly totalRebuys?: number | null;
+  readonly totalAddons?: number | null;
+  readonly totalDuration?: string | null;
+  readonly gameTags?: (string | null)[] | null;
   readonly venue: AsyncItem<Venue | undefined>;
   readonly tournamentStructure: AsyncItem<TournamentStructure | undefined>;
   readonly cashStructure: AsyncItem<CashStructure | undefined>;
@@ -316,6 +333,8 @@ type EagerTournamentStructure = {
   readonly buyIn: number;
   readonly rake: number;
   readonly startingStack: number;
+  readonly hasGuarantee?: boolean | null;
+  readonly guaranteeAmount?: number | null;
   readonly levels?: (TournamentLevel | null)[] | null;
   readonly games?: (Game | null)[] | null;
   readonly createdAt?: string | null;
@@ -333,6 +352,8 @@ type LazyTournamentStructure = {
   readonly buyIn: number;
   readonly rake: number;
   readonly startingStack: number;
+  readonly hasGuarantee?: boolean | null;
+  readonly guaranteeAmount?: number | null;
   readonly levels: AsyncCollection<TournamentLevel>;
   readonly games: AsyncCollection<Game>;
   readonly createdAt?: string | null;
