@@ -23,6 +23,5 @@
     // ✅ FIX: Set this to false to resolve the TS1294 and TS1484 errors.
     "verbatimModuleSyntax": false 
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"]
 }
